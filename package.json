@@ -1,0 +1,35 @@
+{
+  "name": "helper_project_mcp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server:build": "tsc",
+    "server:build:watch": "tsc --watch",
+    "server:dev": "tsx src/server.ts",
+    "server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev",
+    "server:test": "tsx ./src/github.ts",
+    "client:mcp": "cd build && node client.js",
+    "client:dev": "tsx src/client.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.6.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^2.0.17",
+    "@modelcontextprotocol/sdk": "^1.19.1",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "ai": "^5.0.60",
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
+  }
+}

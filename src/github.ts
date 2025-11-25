@@ -82,7 +82,7 @@ export async function getCommits(repoInfo : {
             })
         }
     } catch (error) {
-        
+        return res.json({error : "Cannot get Commits"})
     }
 }
 
@@ -102,9 +102,8 @@ export async function getPrsFromGitHub(params : {
             })
         }
     } catch (error) {
-        
+         return res.json({error : "Cannot get Pull Requests"})   
     }
 }
 
-// getStaleRepo({username : "sagar-admane", thresholdDays : 2}, 2)
 getReposOfUser({username:"sagar-admane"})

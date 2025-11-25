@@ -50,6 +50,12 @@ server.tool(
     {
         repo : z.string(),
         username : z.string()
+    },  {
+        title : "Get Issues",
+        readOnlyHint : false,
+        idempotentHint : false,
+        destructiveHint : false,
+        openWorldHint : true
     },
     async(params) => {
         const issues = await getIssuesForRepo(params);
@@ -78,6 +84,12 @@ server.tool(
     {
         username : z.string(),
         repo : z.string()
+    },    {
+        title : "Summarize the repositories",
+        readOnlyHint : false,
+        idempotentHint : false,
+        destructiveHint : false,
+        openWorldHint : true
     },
     async (params) => {
         const readme = await getReadme(params);
@@ -117,7 +129,13 @@ server.tool(
         username : z.string(),
         repo : z.string(),
         issue_number : z.number()
-    }, 
+    },     {
+        title : "Summarize the Pull Requests",
+        readOnlyHint : false,
+        idempotentHint : false,
+        destructiveHint : false,
+        openWorldHint : true
+    },
     async (params) => {
 
         const prs = await getPrsFromGitHub(params);
